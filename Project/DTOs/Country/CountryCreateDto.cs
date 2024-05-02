@@ -1,10 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace Project.DTOs.Country;
 
-namespace Project.DTOs.Country;
-
-public class CountryCreateDto
+public class CountryCreateDto : BaseDto
 {
-    [Required]
-    public string Name { get; set; } = string.Empty;
-    public string ShortName { get; set; } = string.Empty;
 }

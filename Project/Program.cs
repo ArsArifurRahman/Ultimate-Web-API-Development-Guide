@@ -1,6 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using Project.Contracts;
+using Project.Contracts.CountryContract;
 using Project.Data;
 using Project.MapConfig;
+using Project.Repositories;
+using Project.Repositories.CountryRepo;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,6 +45,12 @@ builder.Host.UseSerilog(
 // arsns - 05/02/2024 00:43:40
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
+
+// Step 7: Add Dependency Injection
+// arsns - 05/02/2024 21:51:11
+
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 
 var app = builder.Build();
 

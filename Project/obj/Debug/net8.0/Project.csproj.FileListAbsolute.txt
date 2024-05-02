@@ -263,3 +263,4 @@ C:\Users\arsns\OneDrive\Desktop\Work\Ultimate-Web-API-Development-Guide\Project\
 C:\Users\arsns\OneDrive\Desktop\Work\Ultimate-Web-API-Development-Guide\Project\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\arsns\OneDrive\Desktop\Work\Ultimate-Web-API-Development-Guide\Project\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\Users\arsns\OneDrive\Desktop\Work\Ultimate-Web-API-Development-Guide\Project\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\arsns\OneDrive\Desktop\Work\Ultimate-Web-API-Development-Guide\Project\obj\Debug\net8.0\Project.sourcelink.json
