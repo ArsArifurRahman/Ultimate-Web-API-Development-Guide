@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{87E292DE-74B4-41DF-88C8-235BEE50B19D}|Project.csproj|c:\\users\\arsns\\onedrive\\desktop\\work\\ultimate-web-api-development-guide\\project\\controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87E292DE-74B4-41DF-88C8-235BEE50B19D}|Project.csproj|solutionrelative:controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87E292DE-74B4-41DF-88C8-235BEE50B19D}|Project.csproj|c:\\users\\arsns\\onedrive\\desktop\\work\\ultimate-web-api-development-guide\\project\\dtos\\hotel\\hoteldetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87E292DE-74B4-41DF-88C8-235BEE50B19D}|Project.csproj|solutionrelative:dtos\\hotel\\hoteldetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87E292DE-74B4-41DF-88C8-235BEE50B19D}|Project.csproj|c:\\users\\arsns\\onedrive\\desktop\\work\\ultimate-web-api-development-guide\\project\\dtos\\country\\countryreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87E292DE-74B4-41DF-88C8-235BEE50B19D}|Project.csproj|solutionrelative:dtos\\country\\countryreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87E292DE-74B4-41DF-88C8-235BEE50B19D}|Project.csproj|c:\\users\\arsns\\onedrive\\desktop\\work\\ultimate-web-api-development-guide\\project\\dtos\\country\\countrydetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87E292DE-74B4-41DF-88C8-235BEE50B19D}|Project.csproj|solutionrelative:dtos\\country\\countrydetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87E292DE-74B4-41DF-88C8-235BEE50B19D}|Project.csproj|c:\\users\\arsns\\onedrive\\desktop\\work\\ultimate-web-api-development-guide\\project\\mapconfig\\mapperconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87E292DE-74B4-41DF-88C8-235BEE50B19D}|Project.csproj|solutionrelative:mapconfig\\mapperconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HotelDetailDto.cs",
+              "DocumentMoniker": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\DTOs\\Hotel\\HotelDetailDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Hotel\\HotelDetailDto.cs",
+              "ToolTip": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\DTOs\\Hotel\\HotelDetailDto.cs",
+              "RelativeToolTip": "DTOs\\Hotel\\HotelDetailDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T19:46:46.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CountryReadDto.cs",
+              "DocumentMoniker": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\DTOs\\Country\\CountryReadDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Country\\CountryReadDto.cs",
+              "ToolTip": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\DTOs\\Country\\CountryReadDto.cs",
+              "RelativeToolTip": "DTOs\\Country\\CountryReadDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T19:47:48.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CountryDetailDto.cs",
+              "DocumentMoniker": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\DTOs\\Country\\CountryDetailDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Country\\CountryDetailDto.cs",
+              "ToolTip": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\DTOs\\Country\\CountryDetailDto.cs",
+              "RelativeToolTip": "DTOs\\Country\\CountryDetailDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T19:46:48.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MapperConfig.cs",
+              "DocumentMoniker": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\MapConfig\\MapperConfig.cs",
+              "RelativeDocumentMoniker": "MapConfig\\MapperConfig.cs",
+              "ToolTip": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\MapConfig\\MapperConfig.cs",
+              "RelativeToolTip": "MapConfig\\MapperConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T19:42:56.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CountryController.cs",
+              "DocumentMoniker": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\Controllers\\CountryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CountryController.cs",
+              "ToolTip": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\Controllers\\CountryController.cs",
+              "RelativeToolTip": "Controllers\\CountryController.cs",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAywCkAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T18:23:23.28Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
