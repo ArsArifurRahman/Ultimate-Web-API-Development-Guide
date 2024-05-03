@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{87E292DE-74B4-41DF-88C8-235BEE50B19D}|Project.csproj|c:\\users\\arsns\\onedrive\\desktop\\work\\ultimate-web-api-development-guide\\project\\controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87E292DE-74B4-41DF-88C8-235BEE50B19D}|Project.csproj|solutionrelative:controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56210DF1-1027-45CE-8761-22AFA3C1A4B8}|Project.csproj|c:\\users\\arsns\\onedrive\\desktop\\work\\ultimate-web-api-development-guide\\project\\controllers\\stockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56210DF1-1027-45CE-8761-22AFA3C1A4B8}|Project.csproj|solutionrelative:controllers\\stockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56210DF1-1027-45CE-8761-22AFA3C1A4B8}|Project.csproj|c:\\users\\arsns\\onedrive\\desktop\\work\\ultimate-web-api-development-guide\\project\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56210DF1-1027-45CE-8761-22AFA3C1A4B8}|Project.csproj|solutionrelative:controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CountryController.cs",
-              "DocumentMoniker": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\Controllers\\CountryController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CountryController.cs",
-              "ToolTip": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\Controllers\\CountryController.cs",
-              "RelativeToolTip": "Controllers\\CountryController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABLAAAA",
+              "Title": "StockController.cs",
+              "DocumentMoniker": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\Controllers\\StockController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StockController.cs",
+              "ToolTip": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\Controllers\\StockController.cs",
+              "RelativeToolTip": "Controllers\\StockController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T17:21:46.872Z",
+              "WhenOpened": "2024-05-03T16:45:39.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CommentController.cs",
+              "ToolTip": "C:\\Users\\arsns\\OneDrive\\Desktop\\Work\\Ultimate-Web-API-Development-Guide\\Project\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "Controllers\\CommentController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T16:43:58.755Z",
               "EditorCaption": ""
             }
           ]
