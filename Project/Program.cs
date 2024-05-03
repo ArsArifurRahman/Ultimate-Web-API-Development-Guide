@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Project.Data;
+using Project.Mappings;
+using Project.Repositories.Contracts;
+using Project.Repositories.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +11,8 @@ builder.Services.AddDbContext<DataContext>(option =>
 {
     option.UseSqlite(builder.Configuration.GetConnectionString("DCS"));
 });
+builder.Services.AddAutoMapper(typeof(StockMapper));
+builder.Services.AddScoped<IStockContract, StockService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
