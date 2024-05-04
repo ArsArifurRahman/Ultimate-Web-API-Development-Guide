@@ -1,8 +1,7 @@
 ﻿namespace Project.DTOs.Stock;
 
-public class UpdateDto
+public class StockCreateDto
 {
-    public int Id { get; set; }
     public string Symbol { get; set; } = string.Empty;
     public string Company { get; set; } = string.Empty;
     public decimal Purchase { get; set; }

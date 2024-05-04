@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Project.Data;
 using Project.Mappings;
 using Project.Repositories.Contracts;
@@ -12,8 +13,13 @@ builder.Services.AddDbContext<DataContext>(option =>
     option.UseSqlite(builder.Configuration.GetConnectionString("DCS"));
 });
 builder.Services.AddAutoMapper(typeof(StockMapper));
+builder.Services.AddAutoMapper(typeof(CommentMapper));
 builder.Services.AddScoped<IStockContract, StockService>();
-builder.Services.AddControllers();
+builder.Services.AddScoped<ICommentContract, CommentService>();
+builder.Services.AddControllers().AddNewtonsoftJson(option =>
+{
+    option.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

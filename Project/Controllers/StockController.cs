@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Project.Data;
 using Project.DTOs.Stock;
 using Project.Models;
 using Project.Repositories.Contracts;
@@ -12,100 +10,77 @@ namespace Project.Controllers;
 [ApiController]
 public class StockController : ControllerBase
 {
-    private readonly DataContext _context;
     private readonly IMapper _mapper;
     private readonly IStockContract _contract;
 
-    public StockController(DataContext context, IMapper mapper, IStockContract contract)
+    public StockController(IMapper mapper, IStockContract contract)
     {
-        _context = context;
         _mapper = mapper;
         _contract = contract;
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<ReadDto>>> GetStocks()
+    public async Task<ActionResult<IEnumerable<StockReadDto>>> GetStocks()
     {
-        return Ok(_mapper.Map<IEnumerable<ReadDto>>(await _contract.GetStocksAsync()));
+        return Ok(_mapper.Map<IEnumerable<StockReadDto>>(await _contract.GetStocksAsync()));
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<DetailDto>> GetStock(int id)
+    public async Task<ActionResult<StockDetailDto>> GetStock(int id)
     {
-        var stock = await _context.Stocks.FirstOrDefaultAsync(x => x.Id == id);
+        var stock = await _contract.GetStockAsync(id);
 
         if (stock == null)
         {
             return NotFound();
         }
 
-        return Ok(_mapper.Map<DetailDto>(stock));
+        return Ok(_mapper.Map<StockDetailDto>(stock));
     }
 
     [HttpPost]
-    public async Task<ActionResult<Stock>> PostStock(CreateDto createDto)
+    public async Task<ActionResult<Stock>> PostStock(StockCreateDto createDto)
     {
-        var stock = _mapper.Map<Stock>(createDto);
-        _context.Stocks.Add(stock);
-        await _context.SaveChangesAsync();
+        var stock = await _contract.AddStockAsync(_mapper.Map<Stock>(createDto));
         return CreatedAtAction(nameof(GetStock), new { id = stock.Id }, stock);
     }
 
+
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutStock(int id, UpdateDto updateDto)
+    public async Task<IActionResult> PutStock(int id, StockUpdateDto updateDto)
     {
         if (id != updateDto.Id)
         {
             return BadRequest();
         }
 
-        var stock = await _context.Stocks.FirstOrDefaultAsync(x => x.Id == id);
+        var stock = _mapper.Map<Stock>(updateDto);
 
-        if (stock == null)
+        try
+        {
+            await _contract.UpdateStockAsync(id, stock);
+        }
+        catch (KeyNotFoundException)
         {
             return NotFound();
         }
 
-        _mapper.Map(updateDto, stock);
-
-        try
-        {
-            _context.Update(stock);
-            await _context.SaveChangesAsync();
-        }
-        catch (DbUpdateConcurrencyException)
-        {
-            if (!StockExists(id))
-            {
-                return NotFound();
-            }
-            else
-            {
-                throw;
-            }
-        }
-
         return NoContent();
     }
+
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteStock(int id)
     {
-        var stock = await _context.Stocks.FindAsync(id);
-
-        if (stock == null)
+        try
+        {
+            await _contract.DeleteStockAsync(id);
+        }
+        catch (KeyNotFoundException)
         {
             return NotFound();
         }
 
-        _context.Stocks.Remove(stock);
-        await _context.SaveChangesAsync();
-
         return NoContent();
-    }
-
-    private bool StockExists(int id)
-    {
-        return _context.Stocks.Any(e => e.Id == id);
     }
 }

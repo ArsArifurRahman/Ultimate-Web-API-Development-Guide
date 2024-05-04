@@ -8,9 +8,9 @@ public class StockMapper : Profile
 {
     public StockMapper()
     {
-        CreateMap<Stock, ReadDto>().ReverseMap();
-        CreateMap<Stock, DetailDto>().ReverseMap();
-        CreateMap<Stock, CreateDto>().ReverseMap();
-        CreateMap<Stock, UpdateDto>().ReverseMap();
+        CreateMap<Stock, StockReadDto>().ReverseMap();
+        CreateMap<Stock, StockDetailDto>().ReverseMap();
+        CreateMap<Stock, StockCreateDto>().ReverseMap();
+        CreateMap<Stock, StockUpdateDto>().ReverseMap();
     }
 }

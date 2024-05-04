@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Project.Data;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using Project.DTOs.Comment;
 using Project.Models;
+using Project.Repositories.Contracts;
 
 namespace Project.Controllers;
 
@@ -9,87 +10,89 @@ namespace Project.Controllers;
 [ApiController]
 public class CommentController : ControllerBase
 {
-    private readonly DataContext _context;
+    private readonly IMapper _mapper;
+    private readonly ICommentContract _commentContract;
+    private readonly IStockContract _stockContract;
 
-    public CommentController(DataContext context)
+    public CommentController(IMapper mapper, ICommentContract commentContract, IStockContract stockContract)
     {
-        _context = context;
+        _mapper = mapper;
+        _commentContract = commentContract;
+        _stockContract = stockContract;
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Comment>>> GetComments()
+    public async Task<ActionResult<IEnumerable<CommentReadDto>>> GetComments()
     {
-        return await _context.Comments.ToListAsync();
+        return Ok(_mapper.Map<IEnumerable<CommentReadDto>>(await _commentContract.GetCommentsAsync()));
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Comment>> GetComment(int id)
+    public async Task<ActionResult<CommentDetailDto>> GetComment(int id)
     {
-        var comment = await _context.Comments.FindAsync(id);
+        var comment = await _commentContract.GetCommentAsync(id);
 
         if (comment == null)
         {
             return NotFound();
         }
 
-        return comment;
+        return Ok(_mapper.Map<CommentDetailDto>(comment));
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<Comment>> PostComment(int stockId, CommentCreateDto createDto)
+    {
+        if (!await _stockContract.StockExistsAsync(stockId))
+        {
+            return BadRequest("Stock does not exist.");
+        }
+
+        var createComment = new Comment
+        {
+            Title = createDto.Title,
+            Description = createDto.Description,
+            StockId = stockId
+        };
+
+        var comment = await _commentContract.AddCommentAsync(createComment);
+        return CreatedAtAction(nameof(GetComment), new { id = comment.Id }, comment);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutComment(int id, Comment comment)
+    public async Task<IActionResult> PutComment(int id, CommentUpdateDto updateDto)
     {
-        if (id != comment.Id)
+        if (id != updateDto.Id)
         {
             return BadRequest();
         }
 
-        _context.Entry(comment).State = EntityState.Modified;
+        var comment = _mapper.Map<Comment>(updateDto);
 
         try
         {
-            await _context.SaveChangesAsync();
+            await _commentContract.UpdateCommentAsync(id, comment);
         }
-        catch (DbUpdateConcurrencyException)
-        {
-            if (!CommentExists(id))
-            {
-                return NotFound();
-            }
-            else
-            {
-                throw;
-            }
-        }
-
-        return NoContent();
-    }
-
-    [HttpPost]
-    public async Task<ActionResult<Comment>> PostComment(Comment comment)
-    {
-        _context.Comments.Add(comment);
-        await _context.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetComment), new { id = comment.Id }, comment);
-    }
-
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteComment(int id)
-    {
-        var comment = await _context.Comments.FindAsync(id);
-        if (comment == null)
+        catch (KeyNotFoundException)
         {
             return NotFound();
         }
 
-        _context.Comments.Remove(comment);
-        await _context.SaveChangesAsync();
-
         return NoContent();
     }
 
-    private bool CommentExists(int id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteStock(int id)
     {
-        return _context.Comments.Any(e => e.Id == id);
+        try
+        {
+            await _commentContract.DeleteCommentAsync(id);
+        }
+        catch (KeyNotFoundException)
+        {
+            return NotFound();
+        }
+
+        return NoContent();
     }
 }
